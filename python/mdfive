@@ -2,7 +2,9 @@
 # -*- coding: gbk -*-
 # File Name: dicConvert.py
 # Author: weitao
-# ToDo: 生成md5的函数
+# mail: weitao@sogou-inc.com
+# Created Time: 2016年04月29日 星期五 16时01分08秒
+# ToDo:
 # For Example:
 # Pw @ 2016-04-29 16:01:08
 import os

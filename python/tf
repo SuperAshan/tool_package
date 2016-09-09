@@ -1,0 +1,47 @@
+#!/usr/bin/env python
+# -*- coding: gbk -*-
+# File Name: dicConvert.py
+# Author: weitao
+# mail: weitao@sogou-inc.com
+# Created Time: 2016年04月29日 星期五 16时01分08秒
+# ToDo:
+# For Example:
+# Pw @ 2016-04-29 16:01:08
+import os
+import re
+import sys
+
+# 4 tags for character tagging: B(Begin), E(End), M(Middle), S(Single)
+
+import codecs
+import sys
+import time
+import datetime
+
+def timetolong(input):
+    dt=time.strptime(input,"%Y%m%d%H%M%S")
+    print long(time.mktime(dt))
+
+def longtotime(input):
+    dt = datetime.datetime.fromtimestamp(float(input))
+    print dt.strftime("%Y%m%d%H%M%S")
+
+if __name__ == '__main__':
+    if len(sys.argv) > 2:
+        print "Please use: python tf.py input"
+        sys.exit()
+    if len(sys.argv) == 1:
+        utime=long(time.mktime(time.localtime()))
+        print utime
+        print longtotime(utime)
+        sys.exit()
+    input = sys.argv[1]
+    if len(input)==10:
+        longtotime(input)
+    else:
+        if len(input)==6 or len(input)==12:
+            if len(input)==6:
+                input=str(long(input)*1000000)
+            timetolong(input)
+        else:
+            print "Format Wrong! please input time format like 20160613001214 or 20160605 , or ms like 1428905695"
