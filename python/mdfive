@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+# -*- coding: gbk -*-
+# File Name: dicConvert.py
+# Author: weitao
+# ToDo: 生成md5的函数
+# For Example:
+# Pw @ 2016-04-29 16:01:08
+import os
+import re
+import sys
+
+# 4 tags for character tagging: B(Begin), E(End), M(Middle), S(Single)
+
+import codecs
+import sys
+import hashlib
+
+def md5url(data):
+    m2=hashlib.md5()
+    m2.update(data)
+    print m2.hexdigest()
+
+if __name__ == '__main__':
+    if len(sys.argv) != 2:
+        print "Please use: python mdfive.py input"
+        sys.exit()
+    url = sys.argv[1]
+    md5url(url)
